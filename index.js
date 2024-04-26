@@ -21,7 +21,7 @@ console.log(`Example app listening on port ${port}`)
 
 app.get('/api/province', function (req, res) {
     
-    res.send()
+    res.send(provincias)
 });
 app.get('/api/province', function (req, res) {
     
