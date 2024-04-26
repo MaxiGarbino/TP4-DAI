@@ -6,7 +6,7 @@ export const getAllProvinces = (req, res) => {
 
 export const getProvinceById = (req, res) => {
     const id = req.params.id;
-    const province = provincias.find(province => province.id === id);
+    const province = provincias.find(province => province.id == id);
     if (province) {
         res.json(province);
     } else {
