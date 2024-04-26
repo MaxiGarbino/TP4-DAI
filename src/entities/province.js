@@ -1,4 +1,4 @@
-const provincias = [
+let provincias = [
     {
       id: 1,
       name: "Chaco Provincia",
