@@ -29,7 +29,20 @@
 			"name": "province - GetById",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/province/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"province",
+						"2"
+					]
+				}
 			},
 			"response": []
 		},
@@ -87,7 +100,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/province",
+					"raw": "http://localhost:3000/api/province/3",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -95,7 +108,8 @@
 					"port": "3000",
 					"path": [
 						"api",
-						"province"
+						"province",
+						"3"
 					]
 				}
 			},
