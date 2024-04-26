@@ -16,3 +16,12 @@ app.use("/api/province", ProvinceRouter);
 app.listen(port, () => {
 console.log(`Example app listening on port ${port}`)
 })
+
+app.get('/api/province', function (req, res) {
+    
+    res.send()
+});
+app.get('/api/province', function (req, res) {
+    
+    res.send()
+});
