@@ -44,3 +44,10 @@ const provincias = [
   console.log(provincias);
   
 export {provincias};
+
+const ProvinceController = {
+    // ... tu código aquí
+  };
+  
+  export default ProvinceController;
+  
