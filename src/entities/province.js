@@ -16,4 +16,4 @@ let provincias = [
   new Provincia(5, "Mendoza Provincia", "Provincia de Mendoza", -32.8895, -68.8458, 104)
 ];
 
-export {provincias};
+export { provincias };
