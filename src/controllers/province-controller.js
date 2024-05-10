@@ -17,36 +17,19 @@ router.get('/:id', async(req, res) => {
     const id = req.params.id;
     const resArray = await svc.getByIdAsync(id);
     res.status(resArray[1]).send(resArray[0]);
-    /*const id = req.params.id;
-    const index = provincias.findIndex(provincia => provincia.id == id);
-    if (index !== -1) {
-        res.send(provincias[index]);
-    } else {
-        res.status(404).send({ error: "Provincia no encontrada" });
-    }
-    */
+    
 });
 
-router.post('', (req, res) => {
-    try {
-        let nombre = req.body.name;
-        let full_nombre = req.body.full_name;
-        let latitud = parseInt(req.body.latitude);
-        let longitud = parseInt(req.body.longitude);
-        let display_orden = parseInt(req.body.display_order);
-        provincias.push({
-            id: (provincias.length + 1),
-            name: nombre,
-            full_name: full_nombre,
-            latitude: latitud,
-            longitude: longitud,
-            display_order: display_orden
-        });
-        res.status(201).send("created");
-    } catch (error) {
-        console.log(error)
-        res.status(400).send(error.message);
-    }
+router.post('', async(req, res) => {
+    const body = req.body;
+    const resArray = await svc.createAsync(body);
+    res.status(resArray[1]).send(resArray[0]);
+});
+
+router.delete('/:id', async(req, res) => {
+    const id = req.params.id;
+    const resArray = await svc.deleateAsync(id);
+    res.status(resArray[1]).send(resArray[0]);
 });
 
 router.put('', (req, res) => {
@@ -63,16 +46,6 @@ router.put('', (req, res) => {
         }
     }
     else {
-        res.status(404).send({ error: "Provincia no encontrada" });
-    }
-});
-
-router.delete('/:id', (req, res) => {
-    const id = req.params.id;
-    const index = ProvinceRepository.deleteByIdAsync(id);
-    if (index !== -1) {
-        res.status(200).send({ mensaje: "Provincia eliminada correctamente" });
-    } else {
         res.status(404).send({ error: "Provincia no encontrada" });
     }
 });
