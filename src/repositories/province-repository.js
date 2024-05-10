@@ -32,6 +32,34 @@ export default class ProvinceRepository {
             return [error,404];
         }
     }
+    putAsync = async (body) => {
+        let resArray = "";
+        const createPutAsync = body.id;
+        const provincefv = provincias.findIndex(provincia => provincia.id == body.id)
+        if (provincefv != -1) {
+            if( body.name="" || body.name.length <= 3)
+            {
+                resArray = ["No cumple con las reglas de negocio",400]
+            }
+            else
+            {
+                resArray = ["Created",201]
+                provincias[body.id-1] = 
+                {
+                    id: body.id,
+                    name: body.name,
+                    full_name : body.full_name,
+                    latitude: body.atitude,
+                    longitude: body.longitude,
+                    display_order : body.display_order
+                }
+            }
+        } 
+        else {
+            resArray = ["Provincia no encontrada",404]
+        }
+        return resArray;
+    }
     deleateAsync = async (id) => {
         const index = provincias.findIndex(provincia => provincia.id == id);
         let resArray;
